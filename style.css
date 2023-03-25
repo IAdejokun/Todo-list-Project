@@ -1,0 +1,159 @@
+:root{
+    --dark:#374151;
+    --darker:#1f2937;
+    --darkest:#111827;
+    --gray:#6b7280;
+    --light:#eee;
+    --pink:#ec4899;
+    --purple:#8b5cf6;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family:sans-serif;
+    background-color: var(--darker);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+header{
+    margin: 40px 0px;
+}
+
+header h1{
+    font-size: 60px;
+    margin-bottom: 40px;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: var(--poppins);
+}
+
+form input, .content input{
+    border: none;
+    appearance: none;
+    outline: none;
+    background: none;
+}
+
+form #addNewTask{
+    padding: 20px;
+    border-radius: 16px;
+    background-color: var(--darkest);
+    width: 600px;
+    font-size: 22px;
+    color: white;
+    margin-right: 7px;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+}
+form #addNewTask::placeholder{
+    color: var(--gray);
+}
+
+#submitTaskBtn{
+    outline: none;
+    padding: 11px 26px;
+    border-radius: 12px;
+    background-color:var(--pink);
+    font-size: 34px;
+    color: white;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+#submitTaskBtn:hover{
+    opacity: 0.8;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    right: 100px;
+    top: 20px;
+}
+
+main h2{
+    font-size: 30px;
+    margin-bottom: 40px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.task{
+    padding: 20px;
+    border-radius: 16px;
+    background-color: var(--darkest);
+    width: 700px;
+    font-size: 22px;
+    color: white;
+    margin-right: 7px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.task .content{
+    width: 460px;
+}
+
+.content .text {
+    color: white;
+    font-size: 18px;
+    font-weight: 400;
+    width: 410px;
+}
+
+.task .content .text:not(:read-only){
+    color: var(--pink);
+}
+
+.edit{
+    color: blue;
+}
+
+.delete{
+    color: crimson;
+}
+
+.edit:hover{
+    opacity: 0.8;
+}
+
+.delete:hover{
+    opacity: 0.8;
+}
+
+.edit, .delete, .expand{
+    padding: 11px 9px;
+    border-radius: 12px;
+    outline: none;
+    border: none;
+    appearance: none;
+    background: none;
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.expand{
+    color:green;
+    font-size: 30px;
+}
+
+.expand:hover{
+    opacity: 0.8;
+}
+
