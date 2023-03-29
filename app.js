@@ -2,6 +2,7 @@ window.addEventListener('load', () =>{
     const form = document.querySelector('form');
     const newTaskElement = document.querySelector('#addNewTask');
     const tasksElementList = document.querySelector('.tasks')
+    const bodyStyle = document.querySelector('body');
 
     form.addEventListener( 'submit', (e)=>{
         e.preventDefault();
@@ -46,10 +47,34 @@ window.addEventListener('load', () =>{
          
         const expandBtnElement = document.createElement('button');
         expandBtnElement.classList.add('expand');
-        expandBtnElement.innerText = '\u21B4' ;
+        expandBtnElement.innerText = 'more' ;
         actionsBtnElement.appendChild(expandBtnElement);
 
         newTaskElement.value = '';
+
+       const readMoreElement = document.createElement('div');
+       readMoreElement.classList.add('readMore');
+       taskElement.appendChild(readMoreElement);
+
+       const readContentElement = document.createElement('div');
+       readContentElement.classList.add('readContent');
+       readMoreElement.appendChild(readContentElement);
+       
+       const readMoreContentElement = document.createElement('textarea');
+       readMoreContentElement.name = 'readMoreContent';
+       readMoreContentElement.classList.add('readMoreContent');
+       readMoreContentElement.setAttribute('readonly', 'readonly');
+       readMoreContentElement.rows = '10';
+       readMoreContentElement.cols = '30';
+       readMoreContentElement.value = newTaskValue;
+       readContentElement.appendChild(readMoreContentElement);
+
+        const closeBtn = document.createElement('button');
+        closeBtn.classList.add('close');
+        closeBtn.innerText = 'x';
+        readContentElement.appendChild(closeBtn);
+
+        readMoreElement.style.display = 'none';
 
         editBtnElement.addEventListener('click', ()=>{
             if (editBtnElement.innerText.toLowerCase () == 'edit'){
@@ -66,14 +91,15 @@ window.addEventListener('load', () =>{
         })
 
         expandBtnElement.addEventListener('click', ()=>{
-            if (expandBtnElement.innerText.toLowerCase() == '\u21B4' ) {
-                expandBtnElement.innerText = '\u2B0F';
-                contentElement.style.paddingBottom = '50px';
-            } else{
-                expandBtnElement.innerText = '\u21B4';
-                contentElement.style.paddingBottom = '0';
-            }
+          readMoreElement.style.display = 'block';
         })
+
+        closeBtn.addEventListener( 'click', ()=>{
+            readMoreElement.style.display = 'none'
+            
+        }
+
+        )
 
     }
 

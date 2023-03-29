@@ -95,13 +95,14 @@ main h2{
     padding: 20px;
     border-radius: 16px;
     background-color: var(--darkest);
-    width: 700px;
+    width: 720px;   
     font-size: 22px;
     color: white;
     margin-right: 7px;
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+    position: relative;
 }
 
 .task .content{
@@ -112,7 +113,7 @@ main h2{
     color: white;
     font-size: 18px;
     font-weight: 400;
-    width: 410px;
+    width: 400px;
 }
 
 .task .content .text:not(:read-only){
@@ -136,7 +137,7 @@ main h2{
 }
 
 .edit, .delete, .expand{
-    padding: 11px 9px;
+    padding: 11px 7px;
     border-radius: 12px;
     outline: none;
     border: none;
@@ -150,10 +151,64 @@ main h2{
 
 .expand{
     color:green;
-    font-size: 30px;
 }
 
 .expand:hover{
     opacity: 0.8;
 }
+
+.readMore{
+    position: absolute;
+    left: 90px;
+}
+
+.readContent{
+    padding: 20px;
+    border-radius: 16px;
+    background-color: var(--darkest);
+    width: 700px;   
+    font-size: 22px;
+    color: white;
+    margin-right: 7px;
+    align-items: center;
+    margin-bottom: 20px;
+    height: 35vh;
+}
+
+.close{
+    color: red;
+    font-size: 20px;
+    font-weight: 400;
+    text-transform: uppercase;
+    border: none;
+    padding: 10px;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+    position: relative;
+    top: -222px;
+    left: 645px;
+    transition: ease-in 250ms;
+}
+
+.close:hover{
+    color: #ff0000cb;
+}
+
+.readMoreContent{
+    width: 650px;
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: 400;
+    font-family: sans-serif;
+    padding: 10px;
+    border-radius: 16px;
+    color: white;
+    background-color: var(--darkest);
+    outline: none;
+    border: none;
+    appearance: textfield;
+    resize: none;
+}
+
 
